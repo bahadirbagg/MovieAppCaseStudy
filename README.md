@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Movie App Case Study
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+The **Movie App** is a web application built as a case study project that allows users to search for movies, view detailed information, watch trailers, and explore movie-related content. The app uses the OMDB API to fetch movie data and the YouTube API to retrieve trailer videos. The project showcases key aspects of modern web development, including React.js, state management, and API integration.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Search for Movies**: Search for movies based on title, genre, or year.
+- **Movie Details**: View detailed information about each movie, including plot, rating, runtime, and more.
+- **Trailer Videos**: Watch trailers directly from the movie details page.
+- **Pagination**: Navigate through large lists of search results with pagination controls.
+- **Responsive Design**: The app is designed to be fully responsive across different screen sizes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React.js**: Frontend framework for building the user interface.
+- **Axios**: For making HTTP requests to the OMDB and YouTube APIs.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **OMDB API**: Provides movie data including title, genre, year, plot, ratings, etc.
+- **YouTube API**: Used to fetch YouTube video URLs for movie trailers.
 
-### `npm test`
+## Setup Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone this repository:
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/bahadirbagg/MovieAppCaseStudy.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate into the project directory:
+   
+    ```bash
+    cd MovieAppCaseStudy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
 
-### `npm run eject`
+4. Create a .env file in the root directory and add your API keys:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+   REACT_APP_OMDB_API_KEY=your_omdb_api_key
+   REACT_APP_YOUTUBE_API_KEY=your_youtube_api_key
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Run the application:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    ```bash
+   npm start
