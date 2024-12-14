@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-const API_KEY = 'f8d0ad24';
-const BASE_URL = 'http://www.omdbapi.com/';
+// API anahtarlarını ve base URL'leri çevre değişkenlerinden alalım
+const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
+const BASE_URL = 'https://www.omdbapi.com/';
 
-const YOUTUBE_API_KEY = 'AIzaSyC1ABDhpa-YnP2SEFPub69cknvi42rdyOQ';
+const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 const YOUTUBE_BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
 
-export const IMAGE_PATH = 'https://img.omdbapi.com/?apikey=f8d0ad24&i=';
+export const IMAGE_PATH = 'https://img.omdbapi.com/?apikey=' + API_KEY + '&i=';
 
 // Film verilerini çeken fonksiyon
 export const fetchMovies = async (query = 'Pokemon', page = 1, type = 'movie', year = '') => {
@@ -28,12 +29,23 @@ export const fetchMovies = async (query = 'Pokemon', page = 1, type = 'movie', y
     }
 };
 
+// Film detayını çeken fonksiyon
 export const fetchMovieDetail = async (imdbID) => {
-    const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f8d0ad24&i`);
-    const data = await response.json();
-    return data;
+    try {
+        const response = await axios.get(BASE_URL, {
+            params: {
+                apikey: API_KEY,
+                i: imdbID,  // IMDb ID ile sorgu yapıyoruz
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Film detayları alınırken hata oluştu:', error);
+        return { Error: 'Film detayları alınamadı' };
+    }
 };
 
+// Film trailer ID'sini çeken fonksiyon
 export const fetchTrailerId = async (movieTitle) => {
     try {
         const response = await axios.get(YOUTUBE_BASE_URL, {
